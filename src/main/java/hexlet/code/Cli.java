@@ -122,9 +122,8 @@ public class Cli {
     public static void Addition() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int Number3 = random.nextInt(99) + 1;
-        int Number4 = random.nextInt(99) + 1;
-
+        int Number3 = random.nextInt(19) + 1;
+        int Number4 = random.nextInt(19) + 1;
         int answer3 = Number3 + Number4;
         System.out.print("Question: " + Number3 + "+" + Number4 + "\nYour answer: ");
 
@@ -147,8 +146,8 @@ public class Cli {
     public static void subtraction() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int Number5 = random.nextInt(99) + 1;
-        int Number6 = random.nextInt(99) + 1;
+        int Number5 = random.nextInt(19) + 1;
+        int Number6 = random.nextInt(19) + 1;
 
         int answer4 = Number5 - Number6;
         System.out.print("Question: " + Number5 + "-" + Number6 + "\nYour answer: ");
@@ -258,34 +257,50 @@ public class Cli {
             }
         }
         return false;
-    }
-    public static void Prime () {
+    }public static void PPrime() {
         Cli.Greet();
+        for (int i = 1; i <= 3; i++) {
+            Statys = true;
+            boolean correct = Prime();
+            if (!correct) {
+                break;
+            }
+            if (i == 3 && correct) {
+                System.out.println("Congratulations, " + neme + "!");
+            }
+        }
+    }
+
+    public static boolean Prime() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int num = random.nextInt(20) + 1;
-        System.out.println("Question: " + num);
-        System.out.print("Your answer: ");
-        String aa = scanner.nextLine();
-        String no = "no";
-        if (num % 2 != 0 && aa.equalsIgnoreCase("yes")) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + neme + "!");
-        }
-        if (num % 2 == 0 && aa.equalsIgnoreCase("no")) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + neme + "!");
-        } else if (num % 2 != 0 && aa.equalsIgnoreCase("no")) {
-            System.out.println("'" + aa + "' is the wrong answer ;(. Correct answer was '" + "yes" + "'.\nLet's try again, " + neme + "!");
-            return;
+        while (Statys) {
+            int num = random.nextInt(20) + 1;
+            System.out.println("Question: " + num);
+            System.out.print("Your answer: ");
+            String aa = scanner.nextLine();
+            String no = "no";
+            if (num % 2 != 0 && aa.equalsIgnoreCase("yes")) {
+                System.out.println("Correct!");
+                return true;
+            }
+            if (num % 2 == 0 && aa.equalsIgnoreCase("no")) {
+                System.out.println("Correct!");
+          return true;
+            } else if (num % 2 != 0 && aa.equalsIgnoreCase("no")) {
+                System.out.println("'" + aa + "' is the wrong answer ;(. Correct answer was '" + "yes" + "'.\nLet's try again, " + neme + "!");
+                return false;
 
-        }else if (num % 2 == 0 && aa.equalsIgnoreCase("yes")){
-            System.out.println("'" + aa + "' is the wrong answer ;(. Correct answer was '" + "no" + "'.\nLet's try again, " + neme + "!");
-            return;
+            } else if (num % 2 == 0 && aa.equalsIgnoreCase("yes")) {
+                System.out.println("'" + aa + "' is the wrong answer ;(. Correct answer was '" + "no" + "'.\nLet's try again, " + neme + "!");
+                return false;
+            }
         }
+        return false;
     }
 }
+
 
 
 

@@ -37,7 +37,7 @@ public class App {
 
         }
         if(num ==6) {
-            Cli.Prime();
+            Cli.PPrime();
 
         }
 

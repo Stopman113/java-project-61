@@ -1,9 +1,8 @@
 package hexlet.code;
 
-import javax.naming.Name;
 import java.util.Scanner;
 
-public class App {
+public class app {
 
     public static void main(String[] args) {
         Cli Cli = new Cli();

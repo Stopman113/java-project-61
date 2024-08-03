@@ -4,7 +4,7 @@ plugins {
     checkstyle
 }
 application {
-    mainClass.set("hexlet.code.App")
+    mainClass.set("hexlet.code.app")
 }
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
